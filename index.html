@@ -65,7 +65,7 @@
             lines: []
         };
 
-        ctx.font = "100px Monospace";
+        ctx.font = "60px Monospace";
 
         function initMenu() {
             document.getElementById("game").hidden = true;
@@ -189,10 +189,10 @@
 
                 else {
                     if (canvasText.lines.length > 5) {
-                        canvasText.y -= 20;
+                        canvasText.y -= 14;
                         if (canvasText.lines.length > 6) {
                             canvasText.lines.shift();
-                            canvasText.y += 100;
+                            canvasText.y += 70;
                         }
                     }
                 }
@@ -208,8 +208,8 @@
             ctx.fillStyle = 'black';
             let y = canvasText.y;
             for (let i = 0; i < canvasText.lines.length; i++) {
-                ctx.fillText(canvasText.lines[i], 110, y);
-                y += 100;
+                ctx.fillText(canvasText.lines[i], 20, y);
+                y += 70;
             }
 
             document.body.style.backgroundColor = backgroundColors[Math.floor(position.current / 100) % 10];
