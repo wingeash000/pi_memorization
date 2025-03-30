@@ -14,7 +14,6 @@
             }
         </style>
     </head>
-    <!-- screen size is 750*1334 -->
     <body>
 
     <div id="menu" hidden="true">
@@ -38,7 +37,7 @@
 
         <input id="numberInput" type="number" oninput="eventInput();"><br>
 
-        <canvas id="canvas" width="500px" height="600px" style="border:8px solid #000000;"></canvas>
+        <canvas id="canvas" width="300px" height="300px" style="border:8px solid #000000;"></canvas>
      </div>
 
      </body>
@@ -65,7 +64,7 @@
             lines: []
         };
 
-        ctx.font = "60px Monospace";
+        ctx.font = "50px Monospace";
 
         function initMenu() {
             document.getElementById("game").hidden = true;
@@ -83,7 +82,7 @@
             let twenty = Number(document.getElementById("twentyChunk").value);
 
             position.start = thousand*1000 + hundred*100 + twenty*20 - 1120;
-            canvasText.y = 90;
+            canvasText.y = 50;
             canvasText.lines = [];
 
             ctx.fillStyle = 'white';
@@ -189,10 +188,10 @@
 
                 else {
                     if (canvasText.lines.length > 5) {
-                        canvasText.y -= 14;
+                        canvasText.y -= 10;
                         if (canvasText.lines.length > 6) {
                             canvasText.lines.shift();
-                            canvasText.y += 70;
+                            canvasText.y += 50;
                         }
                     }
                 }
@@ -209,7 +208,7 @@
             let y = canvasText.y;
             for (let i = 0; i < canvasText.lines.length; i++) {
                 ctx.fillText(canvasText.lines[i], 20, y);
-                y += 70;
+                y += 50;
             }
 
             document.body.style.backgroundColor = backgroundColors[Math.floor(position.current / 100) % 10];
