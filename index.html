@@ -82,6 +82,7 @@
             let twenty = Number(document.getElementById("twentyChunk").value);
 
             position.start = thousand*1000 + hundred*100 + twenty*20 - 1120;
+            position.current = position.start;
             canvasText.y = 36;
             canvasText.lines = [];
 
@@ -92,7 +93,6 @@
                 mode = "learn";
                 position.fiveChunk = 0;
                 position.correctInputsNeeded = 3;
-                position.current = position.start;
 
                 busy = true;
                 showNextFive();
